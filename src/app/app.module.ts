@@ -23,7 +23,8 @@ import { environment } from '../environments/environment';
 
 // Auth service
 import { AuthService } from "./shared/services/auth.service";
-
+import { DrawComponent } from './components/draw/draw.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { AuthService } from "./shared/services/auth.service";
     SignUpComponent,
     DashboardComponent,
     ForgotPasswordComponent,
-    VerifyEmailComponent
+    VerifyEmailComponent,
+    DrawComponent
   ],
   imports: [
     BrowserModule,
@@ -40,7 +42,8 @@ import { AuthService } from "./shared/services/auth.service";
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireAuthModule,
     AngularFirestoreModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    FormsModule
   ],
   providers: [AuthService],
   bootstrap: [AppComponent]

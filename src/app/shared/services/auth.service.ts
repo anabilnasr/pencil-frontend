@@ -4,6 +4,7 @@ import { auth } from 'firebase/app';
 import { AngularFireAuth } from "@angular/fire/auth";
 import { AngularFirestore, AngularFirestoreDocument } from '@angular/fire/firestore';
 import { Router } from "@angular/router";
+import { NULL_EXPR } from '@angular/compiler/src/output/output_ast';
 
 @Injectable({
   providedIn: 'root'
@@ -11,7 +12,7 @@ import { Router } from "@angular/router";
 
 export class AuthService {
   userData: any; // Save logged in user data
-
+  canvas: any;
   constructor(
     public afs: AngularFirestore,   // Inject Firestore service
     public afAuth: AngularFireAuth, // Inject Firebase auth service
@@ -76,7 +77,7 @@ export class AuthService {
     })
   }
 
-  // Returns true when user is looged in and email is verified
+  // Returns true when user is logged in and email is verified
   get isLoggedIn(): boolean {
     const user = JSON.parse(localStorage.getItem('user'));
     return (user !== null && user.emailVerified !== false) ? true : false;
@@ -110,7 +111,7 @@ export class AuthService {
       email: user.email,
       displayName: user.displayName,
       photoURL: user.photoURL,
-      emailVerified: user.emailVerified
+      emailVerified: user.emailVerified,
     }
     return userRef.set(userData, {
       merge: true
@@ -124,5 +125,32 @@ export class AuthService {
       this.router.navigate(['sign-in']);
     })
   }
-
+  UpdateCanvas(canvas){
+    var user=JSON.parse(localStorage.getItem('user'));
+    const userRef: AngularFirestoreDocument<any> = this.afs.doc(`users/${user.uid}`);
+    return userRef.set({canvas:canvas},{merge: true})
+    
+  }
+  Draw(){
+    this.router.navigate(['draw']);
+  }
+  Dashboard(){
+    this.router.navigate(['dashboard']);
+  }
+  getSavedCanvas() {
+    return new Promise((resolve, reject) => {
+      var user=JSON.parse(localStorage.getItem('user'));
+      let canvasJson:any;
+      this.afs.doc(`users/${user.uid}`).get().subscribe(ref => {
+      if(!ref.exists){
+      console.log("NO DOC WITH uid IN users")// //DOC DOES NOT EXIST
+      }else{
+      const doc = ref.data();
+      canvasJson=JSON.parse(doc.canvas);
+      }
+      resolve(canvasJson);
+      });
+      
+    });
+  }
 }

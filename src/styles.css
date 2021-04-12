@@ -283,9 +283,8 @@ input:-moz-placeholder {
   border-bottom: 1px solid #dde0e2;
   cursor: pointer;
 }
-
-.sidebar .nav-link.active,
-.sidebar a:hover,
+.nav-link.active,
+a:hover,
 a:not([href]):not([tabindex]):focus,
 a:not([href]):not([tabindex]):hover {
   color: #E91E63;
@@ -355,7 +354,8 @@ i {
 }
 
 .inner-adjust {
-  padding: 0 20px;
+  margin: 20px;
+  height: 100%;
 }
 
 .action-block {
@@ -662,5 +662,12 @@ body .table thead th {
 
   .px-logo {
     display: none;
+  }
+  .canvas-wrapper {
+    height: 100%;
+  }
+  .flex-grow-1 {
+    -ms-flex-positive: 1 !important;
+    flex-grow: 1 !important;
   }
 }

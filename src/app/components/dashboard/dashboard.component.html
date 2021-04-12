@@ -1,15 +1,13 @@
 <!-- Top navigation -->
-<nav class="navbar navbar-dark fixed-top bg-dark flex-md-nowrap p-0 shadow">
-  <a class="navbar-brand col-sm-3 col-md-2 mr-0">
-    <img class="brand-logo" src="assets/logo-positronx-white.svg" alt="positronX.io Logo">
-  </a>
+<nav class="navbar navbar-dark fixed-top bg-light flex-md-nowrap p-0 shadow">
+  <h1>Pencil-Frontend Assignment</h1>
 </nav>
 
 <!-- Sidebar navigation -->
 <div class="container-fluid">
   <div class="row">
 
-    <nav class="col-md-2 d-md-block bg-light sidebar">
+    <nav class="col-md-1 d-md-block bg-light sidebar">
       <div class="sidebar-sticky">
         <ul class="nav flex-column">
           <li class="nav-item">
@@ -17,6 +15,13 @@
               <i class="fas fa-user"></i>User Profile
             </a>
           </li>
+
+          <li class="nav-item">
+            <a class="nav-link" (click)="authService.Draw()">
+              <i class="fas fa-paint-brush"></i>Draw
+            </a>
+          </li>
+
           <!-- Calling SignOut() Api from AuthService -->
           <li class="nav-item">
             <a class="nav-link" (click)="authService.SignOut()">
@@ -28,7 +33,7 @@
     </nav>
 
     <!-- Main content -->
-    <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
+    <main role="main" class="col-md-9 ml-sm-auto col-lg-11 px-4">
       <div class="inner-adjust">
 
         <div class="pt-3 pb-2 mb-3 border-bottom">
@@ -42,7 +47,6 @@
                 alt="{{user.displayName}}">
               <div class="media-body">
                 <h1>Hello: <strong>{{(user.displayName) ? user.displayName : 'User'}}</strong></h1>
-                <p>User ID: <strong>{{user.uid}}</strong></p>
                 <p>Email: <strong>{{user.email}}</strong></p>
                 <p>Email Verified: <strong>{{user.emailVerified}}</strong></p>
               </div>
