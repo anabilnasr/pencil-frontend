@@ -663,11 +663,5 @@ body .table thead th {
   .px-logo {
     display: none;
   }
-  .canvas-wrapper {
-    height: 100%;
-  }
-  .flex-grow-1 {
-    -ms-flex-positive: 1 !important;
-    flex-grow: 1 !important;
-  }
+  
 }

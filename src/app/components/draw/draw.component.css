@@ -1,0 +1,36 @@
+.parent{
+    display: flex;
+    flex: 1;
+    flex-direction: row;
+    background-color: #055AF9;
+    height: 100%;
+  }
+  .toolbar{
+    display: flex;
+    flex-direction: column;
+    background-color:#E91E63;
+    justify-content: flex-start;
+    padding: 10px;
+    height: 100%;
+  }
+  .tool{
+      margin-top: 20px;
+  }
+  .canvasWrapper{
+    display: flex;
+    flex: 3;
+    justify-content: center;
+    background-color: rgb(240, 255, 240);
+    align-items: center;
+    height: 100%;
+  }
+  .window{
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      flex: 1;
+      height: 100%;
+  }
+  #drawing-color{
+      align-self: center;
+  }
