@@ -1,5 +1,7 @@
 
+##Pencil front assignment
 
+#authentication
 - Sign in with Google
 - Sign in with username/password
 - Sign up with username/password
@@ -9,6 +11,7 @@
 - Prevent user to access inner pages unless user is not logged In
 - Prevent user to access sign in and sign up components when a user is already logged in
 - Save user data to localstorage when user is logged in
+- 
 
 ## Installation Process
 Run `npm install` to install all the required dependencies
