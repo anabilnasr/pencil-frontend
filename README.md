@@ -11,7 +11,10 @@
 - Prevent user to access inner pages unless user is not logged In
 - Prevent user to access sign in and sign up components when a user is already logged in
 - Save user data to localstorage when user is logged in
-- 
+# Dashboard
+- Display user data
+- *Todo* display shared canvas
+
 
 ## Installation Process
 Run `npm install` to install all the required dependencies
