@@ -1,5 +1,5 @@
 
-## Pencil front assignment
+## Pencil frontend assignment
 
 # authentication
 - Sign in with Google
