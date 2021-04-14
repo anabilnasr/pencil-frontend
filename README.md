@@ -1,7 +1,7 @@
 
-##Pencil front assignment
+## Pencil front assignment
 
-#authentication
+# authentication
 - Sign in with Google
 - Sign in with username/password
 - Sign up with username/password
